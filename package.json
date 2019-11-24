@@ -5,27 +5,28 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack",
-    "start": "npm run build && node server.js"
+    "build:dev": "./node_modules/.bin/webpack --config webpack.config.js --mode development",
+    "start:dev": "npm run build:dev && node server.js",
+    "update:packages": "node wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.5",
-    "html-webpack-plugin": "^3.2.0",
-    "source-map-loader": "^0.2.3",
-    "ts-loader": "^4.3.0",
-    "typescript": "^2.8.3",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-middleware": "^3.1.3",
-    "webpack-hot-middleware": "^2.22.2"
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "html-webpack-plugin": "*",
+    "source-map-loader": "*",
+    "ts-loader": "*",
+    "typescript": "*",
+    "webpack": "*",
+    "webpack-cli": "*",
+    "webpack-dev-middleware": "*",
+    "webpack-hot-middleware": "*"
   }
 }

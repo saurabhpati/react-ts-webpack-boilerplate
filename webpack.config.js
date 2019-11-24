@@ -11,6 +11,8 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js'
     },
+    stats: "minimal",
+    mode: 'development',
     devtool: 'source-map',
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
@@ -28,4 +30,5 @@ module.exports = {
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'app', 'index.html') }),
         new webpack.HotModuleReplacementPlugin()
     ]
+
 }   

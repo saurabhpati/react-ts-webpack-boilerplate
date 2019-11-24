@@ -13,7 +13,14 @@ app.get('/', (req, res) => {
 
 let compiler = webpack(webpackConfig);
 app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: true, publicPath: webpackConfig.output.publicPath, stats: { colors: true }
+    noInfo: true, 
+    publicPath: webpackConfig.output.publicPath, 
+    stats: {
+        colors: true, 
+        maxModules: 0,
+        hash: false,
+        entrypoints: false, 
+    },
 }));
 app.use(require('webpack-hot-middleware')(compiler));
 app.use(express.static(path.resolve(__dirname, 'dist')));
